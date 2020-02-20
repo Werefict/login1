@@ -25,7 +25,10 @@ namespace WindowsFormsApp1
         {
 
             con.Open();
-            SqlCommand com = new SqlCommand($"SELECT login FROM Users where login = '{textBox1.Text}' ");
+            SqlCommand com = new SqlCommand($"SELECT login FROM Users where login = '{textBox1.Text}' and password = '{textBox2.Text}' ", con);
+            SqlDataReader dr = com.ExecuteReader();
+            if (dr.HasRows)
+                MessageBox.Show("GOOD");
 
         }
 
