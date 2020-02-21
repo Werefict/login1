@@ -25,9 +25,7 @@ namespace WindowsFormsApp1
         {
 
             con.Open();
-            string s = "SELECT Users FROM dbo.login WHERE Users = '" + textBox1.Text + "' AND password = '" + textBox2.Text + "' ";
-            SqlCommand com = new SqlCommand(s, con);
-            MessageBox.Show(s);
+            SqlCommand com = new SqlCommand("SELECT Users FROM dbo.login WHERE Users = '" + textBox1.Text + "' ", con);// AND password = '" + textBox2.Text + "' ", con);
             SqlDataReader dr = com.ExecuteReader();
             if (dr.HasRows)
             {
