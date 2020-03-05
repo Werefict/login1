@@ -21,7 +21,6 @@ namespace WindowsFormsApp1
         {
             Form3 fm = new Form3();
             fm.Show();
-            this.Hide();
         }
     }
 }
